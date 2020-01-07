@@ -1,0 +1,64 @@
+# git stash - whenever you have some changes that you are not quite ready to commit and maybe you need to switch branches or you want 
+to revert back temporarily to where it was started and you don't know what to do with your changes . where we can do stash on those 
+changes it will save them in a temporary place to where you can go and do what it is you need to do and come back to those changes later
+
+ process
+ -> git branch branch_name
+ -> git checkout branch_name ( changed something)
+ -> git diff (see the change we have made)
+ 
+ * due to some reason we need to switch back to our master branch and check something out or 
+   we need to see how our current file looked like before we started messing with it. we can stash our changes and to back to where we are
+   
+ -> git stash save "worked on something"
+ 
+ -> git diff (it will show nothing)
+ -> git status (it will show nothin to commit)
+ -> git stash list (show the list of stash)
+ 
+ * do the stuff
+ and want to get changes back
+ -> git checkout branch_name
+ -> git stash apply stash@{0}
+ 
+ * now we can see that it has made these changes and when you go back to your file we can see that changes are now back
+ 
+ -> git stash list
+ * we can see that our stash is still there because when we do git stash we were taking all the changes that were in that stash
+ but not getting rid of that stash 
+ 
+ -> git checkout -- . (that reset us back where we are )
+ 
+ -> git stash list
+ -> git stash pop (it will grab the very first stash in the list stash)
+ 
+ * it will apply those changes and drop the stash 
+ 
+ -> git stash list (it will not show the poped stash)
+ 
+ -> git diff (we can see those changes)
+ 
+ * make some changes
+ 
+ -> git diff (chnage wiil reflect)
+ 
+ * now someone told we have add some functionality
+ 
+ -> git stash save "message"
+ -> git stash list
+ 
+ * add those functionality 
+ 
+ -> git diff (we can see that added functionality)
+ -> git stash save "added the function"
+ -> git stash list ( two stash will be on the list and most recent on the top)
+ -> git stash pop ( it will pop the recent stash )
+ 
+ -> git stash drop stash@{2} - delete the specified stash
+ 
+ -> git stash clear - delete all the stash file 
+ 
+ 
+ 
+
+ 
