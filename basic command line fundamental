@@ -22,3 +22,11 @@ workflow
 
 -> git add -A (add all files to staging area) or
 -> git add filename (add specific file to staging area)
+
+* if we want to remove file from staging area
+-> git reset (remove all the file from staging area and add into untracked file)
+-> git reset filename (remove specfic file from staging area and add into untracked file)
+
+commit the changes
+-> git commit -m "message"
+-> git log (allows you to view information about previous commits that have occured in the project)
