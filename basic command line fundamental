@@ -30,3 +30,28 @@ workflow
 commit the changes
 -> git commit -m "message"
 -> git log (allows you to view information about previous commits that have occured in the project)
+
+2). we want to track existing remote project
+
+1. clone a remote repo
+-> git clone <url> <where to clone>
+   git clone https://github.com/pratik-iiitkalyani/git-fundamental.git .
+   
+2. viewing the information about remote repo
+-> git remote -v (tell the infoemation about repo - where it is locally)
+-> git branch -a (list all the branches in repo (both locally and remotelly )
+
+3. commit changes
+-> git diff (show the changes that we have made to the code)
+-> git status
+-> git add ./git add -A
+-> git commit -m "message"
+
+4. push to the remote repo
+-> git pull origin master
+-> git push origin master
+
+
+
+
+
