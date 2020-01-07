@@ -1,1 +1,11 @@
+# check version
+-> git --version
 
+# set global config values(other developer can se who is making the changes)
+-> git config --global user.name "pratik kumar"
+-> git config --global user.email "pratik@gmail.com"
+-> git comfig --list (return all conguration values)
+
+# for help
+git help <verb> (git help config)
+git <verb> --help(git config --help)
