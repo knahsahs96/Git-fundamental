@@ -52,6 +52,34 @@ commit the changes
 -> git push origin master (push the changes to the master branch)
 
 
+Common workflow
+-> create a branch for desired feature
+   -> git branch branch_name
+   -> git branch
+            branch_name
+            * master (* show cwd)
+   -> git checkout branch_name (to change cwd to branch_name)
+   (commit the changes in branch * that will not reflect to remote repo)
+   
+   -> git add ./git add -A
+   -> git commit -m "message"
+   
+   -> git push -u origin master (push the branch to remote - important because in production we make sure that 
+                                 every branch working properly before merge to the master branch)
+                                 
+                                 
+-> merge tha branch to the master
 
+   -> git checkout master
+   -> git pull origin master
+   -> git branch --merged (tell that branch that are merged in master)
+   -> git merge branch_name (merge the branch to the master)
+   -> git push origin master
+   
+-> deleting a branch
+   -> git branch --merged
+   -> git branch -d branch_name (delete the branch from local repo)
+   -> git branch -a (tell branch of remote repo)
+   -> git push origin --delete branch_name (delete the branch from remote repo)
 
 
