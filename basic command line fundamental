@@ -48,8 +48,11 @@ commit the changes
 -> git commit -m "message"
 
 4. push to the remote repo
--> git pull origin master
--> git push origin master
+-> git pull origin master (pull the changes made after cloning of the repo)
+-> git push origin master (push the changes to the master branch)
+
+
+common workflow
 
 
 
