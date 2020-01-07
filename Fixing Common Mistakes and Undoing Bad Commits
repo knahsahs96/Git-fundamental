@@ -1,0 +1,97 @@
+1). Scenario 1
+   if whatever we have change in the file, that are not relevent and we want to go back to previous content
+   -> git checkout branch_name
+   
+2). Scenario 2
+   when we give a wrogn commit message
+   (modify message without doing a another commit)
+  -> git commit --amend -m "right message"    
+  
+  * in this case hashId will changed so when hash changed that means it changed the git history
+
+3). Scenario 3
+  instead of accidentally commiting the wrogn message, we accidently left off a file that meant to be commit
+  eg. i meant to create to create a .gitignore file and wanted to add it to the last commit
+  
+  -> touch .gitignore
+  -> git add .gitignore
+  -> git commit --amend
+  -> git log (it will the show same commit that i commit earlier)
+  
+  -> git log --stat (this will show the file that were changed within the  commit
+  
+  * in this case also hash will chnaged it means history is changed 
+  
+4). Scenario 3
+   when to commit the changes to the wrogn branch(master branch) so we want to move that commit to desired branch(pratik)
+   and return back to current branch
+   
+   -> git log (to get hash of that commit)  - in master branch
+   -> git checkout pratik ( that branch where we previously want to commit)
+   -> git cherry-pick hash (hash that copied from that branch where we commit by mistake)
+   
+   * it will brought that commit to current branch
+   -> git checkout master
+   
+   now we have to reset those changes on master
+    3 types of reset
+   -> git reset --soft hash (it will reset back to the commit that we specified but it will keep 
+      (our changes that we have made in staging directory so we did not loose any our work)
+      
+   -> git reset hash(mixed reset and it is default) - it will keep the file either in staging or working directory based which
+      which one you specify
+      
+    * totally delete the changes
+   -> git reset --hard hash (reverts all of the tracked file back to the state that they were but it leaves any untracked file alone )
+    
+    * when you want get rid of untracked file
+    -> git clean -df ( d option get rid of untracked directory and f option get rid of untracked file)
+    
+    
+    
+ 5). accidentlly you ran reset hard on some changes that you really needed (garbage collector those commits after some day(30 days))
+ 
+ process
+ -> git ref log (shows commit in the order of when you last reference them)
+    * grab the hash before reset and copy that  
+    
+ -> git checkout grabed_hash
+ -> git log 
+    (we can see we get our changes back)
+    * right now we are in detached head state
+    -> detached head state - it means we are on a branch that will be trashed at some point in the future.
+    so to save these changes we need to make a branch from it
+    
+ -> git branch backup_branch
+ -> git checkout master
+ -> git branch ( we can see that we can still have our backup branch )
+ -> git checkout backup_branch ( to verify that we still have those changes)
+ 
+ -> git log ( we can check that we still have those changes)
+ 
+ 
+ 
+* we should not change the git history if other people pulled those changes already
+ 6). when we really need to undo some commits but other people have alredy pulled those changes.git revert creates new commits to 
+    reverse the effect of some earlier commits so in this way you don't rewrite any history
+    
+    * it is not going to modify or delete our existing commit that we have made it is going to create new commits on top of those
+    that completly undo all of the changes
+    
+    -> git log
+    -> git revert hash
+    
+    -> git log
+    (we can see that we have additional commit that says i.e reverted "message of previous commit"
+    
+    
+    -> git diff hash(hash of reverted) hash(hash of previous)
+    it will show the difference between both commit
+    
+    in that way, if some pulled that request their history will not be corrupted
+    
+ 
+ 
+ 
+ 
+ 
