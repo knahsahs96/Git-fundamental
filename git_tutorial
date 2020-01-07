@@ -1,0 +1,12 @@
+# difference between Central VCS(SVN) and Distributed VCS(Git)
+-> Centralized version control systems are based on the idea that there is a single central copy of your project
+somewhere (probably on a server), and programmers will commit their changes to this central copy.
+
+“Committing” a change simply means recording the change in the central system.
+Other programmers can then see this change. They can also pull down the change,
+and the version control tool will automatically update the contents of any files that were changed.
+
+WorkFlow:
+->Pull down any changes other people have made from the central server.
+->Make your changes, and make sure they work properly.
+->Commit your changes to the central server, so other programmers can see them.
