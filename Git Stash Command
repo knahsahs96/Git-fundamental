@@ -59,6 +59,20 @@ changes it will save them in a temporary place to where you can go and do what i
  -> git stash clear - delete all the stash file 
  
  
+ * when you are in master and made some changes and suddenly reliased we are in master branch and we 
+ don't want to commit those changes on master branch and meant to do on some other branch
+ 
+ so best way to "git stash" because stash is carry over branch to branch
+ 
+ * currently on master branch and made some changes
+ -> git stash save "save"
+ -> git checkout branch_name
+ -> git stash pop
+ -> git diff
+ -> git add .
+ -> git commit -m "message"
+ 
+ 
  
 
  
