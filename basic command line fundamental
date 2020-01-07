@@ -9,3 +9,11 @@
 # for help
 git help <verb> (git help config)
 git <verb> --help(git config --help)
+
+Two common scenerios
+1. when you have existing project in local and you want to start tracking using git
+
+workflow
+-> git init (initialize a repository from existing code)
+-> git status (displays the state of the working directory and the staging area)
+-> touch .gitignore (add gitignore file - in this file we include those file that we don't want to track)
