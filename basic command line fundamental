@@ -17,3 +17,8 @@ workflow
 -> git init (initialize a repository from existing code)
 -> git status (displays the state of the working directory and the staging area)
 -> touch .gitignore (add gitignore file - in this file we include those file that we don't want to track)
+
+(* now we are in working directory and git status list those file in working directory)
+
+-> git add -A (add all files to staging area) or
+-> git add filename (add specific file to staging area)
