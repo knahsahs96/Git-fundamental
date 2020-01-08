@@ -1,2 +1,46 @@
 # Difference between "add -A", "add -u", "add .", and "add *"
 
+## git add -A/--all
+-> git status 
+-> git add -A/git add --all     (git reset - unstages all the changes)
+* it is going to stage all of the changes all the modified, deleted, new and dot files in the entire working tree 
+
+* entire working tree means even if we are in subdirectory and do "git add -A" here still we got all the changes
+even though some of the changes were up one directory 
+
+* if we want to add changes only in sub directory but it will not touch anything in top level directory 
+-> git add -A my_dir/  
+
+* "git add -A" is default behaviour of "git add" so we can leave of the -a 
+git add my_dir/ do the same thing as git add -A my_dir
+
+
+## git add -u/git add --update 
+
+->git add -u 
+* it adds all the modified and deleted files but not any untracked files or not any new files and it work for entire tree
+
+we can also specify directory
+-> git add -u my_dir/
+
+
+#git add . (dot indicate current directory)
+
+-> git add . (it add all the changes)
+
+* git add . and git add -A looks same as long as you are in your top directory and 
+it is different when we move to sub directory
+
+-> cd my_dir
+-> git add .
+*it add all the changes in our current directory but not in our top directory 
+
+-> git add -A
+* if you run from anywere it adds all of the changes in the entire working tree
+
+## git add *(not recommended)
+it will not include deleted and hidden file and also not add file of top level dir
+
+
+
+
