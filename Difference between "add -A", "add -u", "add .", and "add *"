@@ -39,8 +39,5 @@ it is different when we move to sub directory
 * if you run from anywere it adds all of the changes in the entire working tree
 
 ## git add *(not recommended)
-it will not include deleted and hidden file and also not add file of top level dir
-
-
-
+it will not include deleted and hidden file and also not add file of top level directory
 
